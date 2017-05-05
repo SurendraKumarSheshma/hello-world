@@ -1,0 +1,28 @@
+program p2
+implicit none
+real*8 A(20),x
+integer i
+
+call random_number(A)
+print*,'array is:',A
+print*,'----------------------------------------------------'
+call Selection_Sort(A)
+end program p2
+
+subroutine Selection_Sort(A)
+implicit none
+real*8 B,x,y,temp,A(20)
+integer i,j
+
+do i=1,20
+  temp=A(i)
+  do j=i,20
+    if(A(j)<temp) then
+       temp=A(j)
+    end if
+  end do
+  A(i)=temp
+end do 
+print*,'sorted array is:',A
+end    
+    
